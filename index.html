@@ -10,10 +10,11 @@
 </head>
 <body>
     <div class="mainNavBar">
-        <a href="./main.html">الرئيسية</a>
-        <a href="./Qran.html">استماع قران</a>
-        <a href="./hadith.html">صحيح البخاري</a>
-        <a href="./hadith2.html">صحيح مسلم</a>
+        <a href="https://m010099oh-cpu.github.io/mainpage/">الرئيسية</a>
+        <a href="https://m010099oh-cpu.github.io/Holy-Quran/">استماع قران</a>
+        <a href="https://m010099oh-cpu.github.io/bukhari/">صحيح البخاري</a>
+        <a href="https://m010099oh-cpu.github.io/muslim/">صحيح مسلم</a>
+        <a href="https://m010099oh-cpu.github.io/prophets/">قصص الأنبياء</a>
         <h1>صحيح مسلم</h1>
     </div>
     <div class="navBar">
@@ -68,6 +69,7 @@
             padding: 10px 20px 10px 20px;
             width: 20%;
             font-size: 20px;
+            text-align: center;
         }
         li{
             font-size: 30px;
@@ -107,6 +109,14 @@
             border-right: green solid 10px;
             color: black;
             direction: rtl;
+            list-style: none;
+        }
+        li h3 {
+            background-color: rgba(47, 255, 134, 0.677);
+            width: fit-content;
+            height: fit-content;
+            padding: 5px 30px;
+            border-radius: 20px;
         }
         @media (min-width: 0px) and (max-width: 600px){
             a {
@@ -124,14 +134,6 @@
     </style>
 
     <script>
-        /*import {hadiths} from "./hadiths.js"
-        document.querySelector("button").onclick = function(){
-            for(let i = 0; i < hadiths.length;i++){
-                if(hadiths[i].text.includes(document.querySelector("input").value)){
-                    console.log(hadiths[i].text)
-                }
-            }
-        }*/
        
         document.querySelector("button").onclick = function(){
             document.querySelector(".content ul").innerHTML = ""
@@ -150,7 +152,10 @@
         .replace(/[\u064B-\u065F]/g, "").includes(document.querySelector("input").value)){
                         console.log(data.hadiths[i])
                          let li = document.createElement("li")
-                         li.innerHTML = data.hadiths[i].text
+                         li.innerHTML = `
+                         <h3>${data.hadiths[i].hadithnumber}</h3>
+                         <p>${data.hadiths[i].text}</p>
+                         `
                          document.querySelector(".content ul").appendChild(li)
                     }else{
                         console.log("no")
